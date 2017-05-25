@@ -1,8 +1,8 @@
 {
-    db: {
-        host: '127.0.0.1',
-        name: 'lspd-central',
-        username: 'root',
-        password: ''
+    "db": {
+        "host": "127.0.0.1",
+        "name": "lspd-central",
+        "username": "root",
+        "password": ""
     }
 }
