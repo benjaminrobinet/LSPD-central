@@ -16,6 +16,8 @@
             }
         }
     }
+    // SETUP
+    define('WEBROOT', __DIR__);
 
     // SETUP LOCALES
     define('PROJECT_DIR', realpath('./'));
@@ -23,7 +25,7 @@
     define('DEFAULT_LOCALE', 'en_US');
     require_once('./lib/gettext/gettext.inc');
     $encoding = 'UTF-8';
-    $locale = 'en_US';
+    $locale = 'fr_FR';
     T_setlocale(LC_MESSAGES, $locale);
     $domain = 'locale';
     bindtextdomain($domain, LOCALE_DIR);
