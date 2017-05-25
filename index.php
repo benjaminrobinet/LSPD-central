@@ -1,9 +1,12 @@
 <?php
+
+    // Autoloader for App
     function autoload($class){
         require_once 'app/' . $class . '.php';
     }
     spl_autoload_register('autoload');
 
+    // DEBUG FUNCTION (var_dump() enhanced)
     function var_dmp(){
         if ( func_num_args() > 0 ){
             foreach(func_get_args() as $arg){
@@ -14,17 +17,13 @@
         }
     }
 
-    // define constants
+    // SETUP LOCALES
     define('PROJECT_DIR', realpath('./'));
     define('LOCALE_DIR', PROJECT_DIR . '/locales');
     define('DEFAULT_LOCALE', 'en_US');
-
     require_once('./lib/gettext/gettext.inc');
-
     $encoding = 'UTF-8';
-
     $locale = 'en_US';
-
     T_setlocale(LC_MESSAGES, $locale);
     $domain = 'locale';
     bindtextdomain($domain, LOCALE_DIR);
@@ -32,8 +31,10 @@
       bind_textdomain_codeset($domain, $encoding);
     textdomain($domain);
     
-    $session = new Session();
-    $db = new Database();
+    $session = new Session(); // Init session
+    $db = new Database(); // Init database
+
+    // Architecture
     if(isset($_GET['page'])){
         $page = $_GET['page'];
     } else {
@@ -45,7 +46,8 @@
 
     $controller = __DIR__ . '/controllers/' . $page . '.php';
     $view = __DIR__ . '/pages/' . $page . '.php';
-
+    
+    // Loader
     require_once($controller);
     require_once($view);
 ?>
