@@ -54,53 +54,63 @@
             }
             return $this->grade;
         }
-        private function setAccred($value){
+        private function setAccreditation($value){
             if($this->session){ 
-                $this->accred = $_SESSION['accred'] = $value;
+                $this->accreditation = $_SESSION['accreditation'] = $value;
             }
-            return $this->accred;
+            return $this->accreditation;
         }
 
 
         private function getId(){
             if($this->session){
-                if($this->id){
-                    $this->id = $_SESSION['id'];
+                if(!$this->id){
+                    if(isset($_SESSION['id'])){
+                        $this->id = $_SESSION['id'];
+                    }
                 }
             }
             return $this->id;
         }
-        private function getPrenom(){
+        public function getPrenom(){
             if($this->session){ 
-                if($this->prenom){
-                    $this->prenom = $_SESSION['prenom'];
+                if(!$this->prenom){
+                    if(isset($_SESSION['prenom'])){
+                        $this->prenom = $_SESSION['prenom'];
+                    }
                 }
             }
             return $this->prenom;
         }
         private function getNom(){
             if($this->session){ 
-                if($this->nom){
-                    $this->nom = $_SESSION['nom'];
+                if(!$this->nom){
+                    if(isset($_SESSION['nom'])){
+                        $this->nom = $_SESSION['nom'];
+                    }
                 }
             }
             return $this->nom;
         }
         private function getGrade(){
             if($this->session){ 
-                if($this->grade){
-                    $this->grade = $_SESSION['grade'];
+                if(!$this->grade){
+                    if(isset($_SESSION['grade'])){
+                        $this->grade = $_SESSION['grade'];
+                    }
                 }
             }
             return $this->grade;
         }
         private function getAccred(){
             if($this->session){ 
-                if($this->accred){
-                    $this->accred = $_SESSION['accred'];
+                if(!$this->accreditation){
+                    if(isset($_SESSION['accreditation'])){
+                        $this->accreditation = $_SESSION['accreditation'];
+                    }
                 }
             }
-            return $this->accred;
+            return $this->accreditation;
         }
         
         private function getSession(){
