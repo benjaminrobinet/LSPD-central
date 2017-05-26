@@ -41,9 +41,7 @@
         
         public function execute($opt = null){
             $this->req->execute($opt);
-            $rep = $this->req->fetchAll(PDO::FETCH_ASSOC);
-            $this->rep = $rep;
-            return $this->rep;
+            return $this->req;
         }
     }
 ?>

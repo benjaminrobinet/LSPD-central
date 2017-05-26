@@ -34,7 +34,6 @@ if(isset($_GET['uri'])){
 $webroot = rtrim($webroot, '/');
 define('WEBROOT', $webroot);
 $current = WEBROOT."/".$page;
-
 $config = new Config();
 
 function txt($string){

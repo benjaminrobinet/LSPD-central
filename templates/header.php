@@ -54,7 +54,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=txt("Menu")?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?=WEBROOT?>/admin"><?=txt("Admin")?></a></li>
+                            <?php if($session->accreditation == 'admin'){ ?>
+                                <li><a href="<?=WEBROOT?>/admin"><?=txt("Admin")?></a></li>
+                            <?php } ?>
                             <li><a href="<?=WEBROOT?>/logout"><?=txt("Déconnexion")?></a></li>
                         </ul>
                     </li>

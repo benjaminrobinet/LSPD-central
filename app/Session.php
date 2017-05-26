@@ -102,7 +102,7 @@
             }
             return $this->grade;
         }
-        private function getAccred(){
+        private function getAccreditation(){
             if($this->session){ 
                 if(!$this->accreditation){
                     if(isset($_SESSION['accreditation'])){

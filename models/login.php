@@ -16,8 +16,9 @@
         global $session;
 
         $db->prepare('SELECT * FROM agent WHERE identifiant = :identifiant');
-        $data = $db->execute(array(':identifiant' => $identifiant));
-        $user = $data[0];
+        $req = $db->execute(array(':identifiant' => $identifiant));
+        $rep = $req->fetchAll();
+        $user = $rep[0];
         $session->id = $user['id'];
         $session->prenom = $user['prenom'];
         $session->nom = $user['nom'];
