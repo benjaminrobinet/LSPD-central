@@ -21,19 +21,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./">LSPD Central</a>
+                <a class="navbar-brand" href="<?=WEBROOT?>">LSPD Central</a>
              </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle <?=($settings!="home") ? "active" : ""?>" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Page <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?=WEBROOT?>/records">Amender</a></li>
+                            <li><a href="<?=WEBROOT?>/records"><?=txt("Amender")?></a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?=WEBROOT?>/register">Registre</a></li>
-                            <li><a href="<?=WEBROOT?>/groupes">Groupes (gang)</a></li>
+                            <li><a href="<?=WEBROOT?>/register"><?=txt("Registre")?></a></li>
+                            <li><a href="<?=WEBROOT?>/groupes"><?=txt("Groupes (gang)")?></a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?=WEBROOT?>/agents">Agents</a></li>
+                            <li><a href="<?=WEBROOT?>/agents"><?=txt("Agents")?></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -55,12 +55,12 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=txt("Menu")?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <?php if($session->accreditation == 'admin'){ ?>
-                                <li><a href="<?=WEBROOT?>/admin"><?=txt("Admin")?></a></li>
+                                <li class="<?=($page == 'admin') ? 'active' : ''?>"><a href="<?=WEBROOT?>/admin"><?=txt("Admin")?></a></li>
                             <?php } ?>
                             <?php if($session->id){ ?>
                                 <li><a href="<?=WEBROOT?>/logout"><?=txt("Déconnexion")?></a></li>
                             <?php } else { ?>
-                                <li><a href="<?=WEBROOT?>/login"><?=txt("Connexion")?></a></li>
+                                <li class="<?=($page == 'login') ? 'active' : ''?>"><a href="<?=WEBROOT?>/login"><?=txt("Connexion")?></a></li>
                             <?php } ?>
                         </ul>
                     </li>
