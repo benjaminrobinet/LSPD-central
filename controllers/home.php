@@ -1,4 +1,4 @@
 <?php
-    $page = array(
-        "title" => "Dashboard"
-    );
+$settings = array(
+    "title" => "Dashboard"
+);

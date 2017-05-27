@@ -25,7 +25,7 @@ if(isset($_GET['uri'])){
     $uri = explode('/', $uristr);
     $page = $uri[0];
     if(isset($uri[1])){
-        $query = $uri[1];
+        $query = array_slice($uri,1);
     }
     $webroot = str_replace($uristr, '', $url);
 } else {
@@ -56,12 +56,16 @@ T_setlocale(LC_MESSAGES, $locale);
 $domain = 'locale';
 bindtextdomain($domain, LOCALE_DIR);
 if (function_exists('bind_textdomain_codeset'))
-  bind_textdomain_codeset($domain, $encoding);
+    bind_textdomain_codeset($domain, $encoding);
 textdomain($domain);
 
 $session = new Session(); // Init session
 $session->init(); // Init session
 $db = new Database(); // Init database
+
+if(!$session->id && $page != "login"){
+    $page = "home";
+}
 
 $model = __DIR__ . '/models/' . $page . '.php';
 $controller = __DIR__ . '/controllers/' . $page . '.php';

@@ -57,7 +57,11 @@
                             <?php if($session->accreditation == 'admin'){ ?>
                                 <li><a href="<?=WEBROOT?>/admin"><?=txt("Admin")?></a></li>
                             <?php } ?>
-                            <li><a href="<?=WEBROOT?>/logout"><?=txt("Déconnexion")?></a></li>
+                            <?php if($session->id){ ?>
+                                <li><a href="<?=WEBROOT?>/logout"><?=txt("Déconnexion")?></a></li>
+                            <?php } else { ?>
+                                <li><a href="<?=WEBROOT?>/login"><?=txt("Connexion")?></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                 </ul>
