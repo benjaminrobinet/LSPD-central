@@ -1,6 +1,6 @@
 <?php
 $settings = array(
-    "title" => "Administration"
+    "title" => "Connexion"
 );
 // $query: admin/$0/$1/$2/.../$n
 
