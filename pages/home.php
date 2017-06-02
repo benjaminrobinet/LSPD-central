@@ -22,10 +22,10 @@
                         <div class="col-xs-8">
                             <p><?=txt("Bienvenu sur LSPD Central")?></p>
                             <p><small><?=txt("Que souhaitez-vous faire ?")?></small></p>
-                            <p><a class="btn btn-primary btn-sm" href="#" role="button"><?=txt("Amender")?></a></p>
-                            <p><a class="btn btn-primary btn-sm" href="#" role="button"><?=txt("Registre")?></a></p>
-                            <p><a class="btn btn-primary btn-sm" href="#" role="button"><?=txt("Groupes")?></a></p>
-                            <p><a class="btn btn-primary btn-sm" href="#" role="button"><?=txt("Agents")?></a></p>
+                            <p><a class="btn btn-primary btn-sm" href="<?=WEBROOT?>/records" role="button"><?=txt("Amender")?></a></p>
+                            <p><a class="btn btn-primary btn-sm" href="<?=WEBROOT?>/register" role="button"><?=txt("Registre")?></a></p>
+                            <p><a class="btn btn-primary btn-sm" href="<?=WEBROOT?>/records" role="button"><?=txt("Groupes")?></a></p>
+                            <p><a class="btn btn-primary btn-sm" href="<?=WEBROOT?>/records" role="button"><?=txt("Agents")?></a></p>
                         </div>
                     </div>
                 </div>
