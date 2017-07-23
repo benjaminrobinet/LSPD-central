@@ -148,8 +148,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><?=txt("Annuler")?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?=$query[0]?>/<?=$agent['id']?>/edit"><?=txt("Editer")?></a></li>
-                                    <li><a href="<?=$query[0]?>/<?=$agent['id']?>/delete"><?=txt("Supprimer")?></a></li>
+                                    <li><a href="edit/<?=$agent['id']?>/edit"><?=txt("Editer")?></a></li>
+                                    <li><a href="edit/<?=$agent['id']?>/delete"><?=txt("Supprimer")?></a></li>
                                 </ul>
                             </div>
                         </span>

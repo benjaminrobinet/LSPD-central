@@ -22,7 +22,7 @@ $query = null;
 // Architecture
 if(isset($_GET['uri'])){
     $uristr = $_GET['uri'];
-    $uri = explode('/', $uristr);
+    $uri = explode('/', rtrim($uristr, '/'));
     $page = $uri[0];
     if(isset($uri[1])){
         $query = array_slice($uri,1);
@@ -32,7 +32,8 @@ if(isset($_GET['uri'])){
     $page = 'home';
 }
 $webroot = rtrim($webroot, '/');
-define('WEBROOT', $webroot);
+define('WEBROOT', rtrim(str_replace('index.php', '', $_SERVER['SCRIPT_NAME']), '/'), true);
+define('ROOT', rtrim(str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']), '/'), true);
 $current = WEBROOT."/".$page;
 $config = new Config();
 

@@ -20,9 +20,13 @@
         
         private function getPDO(){
             if($this->db === null){
-                $pdo = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . '', '' . $this->username . '', '' . $this->password . '');
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $this->db = $pdo;
+                try{
+                    $pdo = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . '', '' . $this->username . '', '' . $this->password . '');
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $this->db = $pdo;
+                } catch (Exception $e) {
+                    echo 'Exception reçue : ',  $e->getMessage(), "\n";
+                }
             }
             return $this->db;
         }
